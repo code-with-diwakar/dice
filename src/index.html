@@ -9,28 +9,62 @@
       background-image: url('./image/background.jpg');
       background-size: cover;
       font-family: 'Arial', sans-serif;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
     .container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     .player, .result {
       background: rgba(255, 255, 255, 0.8);
       padding: 20px;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .dice-image {
       width: 100px;
       height: 100px;
       object-fit: contain;
       margin: 10px auto;
+      transition: transform 0.2s;
+    }
+    .dice-image:hover {
+      transform: rotate(20deg);
     }
     button {
       margin: 10px 0;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #f3c614;
+    }
+    #roll, #reset {
+      background-color: #ffd700;
+      color: #fff;
+      font-weight: bold;
+    }
+    #number, #number1 {
+      background-color: #ff7f50;
+      color: #fff;
+      font-weight: bold;
+    }
+    h1 {
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -38,23 +72,23 @@
   <div class="container">
     <!-- Player 1 Section -->
     <div class="player">
-      <button id="roll" class="text-white px-10 font-semibold py-2 rounded-md bg-yellow-400 border-solid border-2 border-sky-500 mb-5">Roll</button>
+      <button id="roll" class="mb-5">Roll</button>
       <img id="image" src="" alt="Player 1 Dice" class="dice-image">
-      <button id="number" class="font-semibold py-2 rounded-md bg-yellow-400 border-solid border-2 border-red-700 mb-2">DISPLAYED NUMBER</button>
+      <button id="number" class="mb-2">DISPLAYED NUMBER</button>
       <h1 class="font-bold">Player 1</h1>
     </div>
 
     <!-- Player 2 Section -->
     <div class="player">
       <img id="image1" src="" alt="Player 2 Dice" class="dice-image">
-      <button id="number1" class="text-white px-10 font-semibold py-2 rounded-md bg-yellow-400 border-solid border-2 border-red-700 mb-2">DISPLAYED NUMBER</button>
+      <button id="number1" class="mb-2">DISPLAYED NUMBER</button>
       <h1 class="font-bold">Player 2</h1>
     </div>
 
     <!-- Result Section -->
     <div class="result">
       <h1 id="disp" class="text-2xl font-bold my-5"></h1>  
-      <button id="reset" class="text-white px-5 font-semibold py-2 rounded-md bg-yellow-400 border-solid border-2 border-sky-500">Reset</button>
+      <button id="reset">Reset</button>
     </div>
   </div>
 
