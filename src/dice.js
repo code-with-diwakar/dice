@@ -12,9 +12,11 @@ roll.addEventListener("click", () => {
     
     number.innerHTML = randomNumber;
     image.setAttribute("src", `./image/${randomNumber}.jpeg`);
+    image.classList.add('show'); // Show the image
     
     number1.innerHTML = randomNumber2;
     image1.setAttribute("src", `./image/${randomNumber2}.jpeg`);
+    image1.classList.add('show'); // Show the image
     
     if (randomNumber2 > randomNumber) {
         disp.innerHTML = "Player 2 wins!";
@@ -28,9 +30,11 @@ roll.addEventListener("click", () => {
 reset.addEventListener("click", () => {
     number.innerHTML = "DISPLAYED NUMBER";
     image.setAttribute("src", "");
+    image.classList.remove('show'); // Hide the image
     
     number1.innerHTML = "DISPLAYED NUMBER";
     image1.setAttribute("src", "");
+    image1.classList.remove('show'); // Hide the image
     
     disp.innerHTML = "";
 });

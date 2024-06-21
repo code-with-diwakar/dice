@@ -18,7 +18,7 @@
     }
     .container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       padding: 20px;
       background: rgba(255, 255, 255, 0.9);
@@ -38,9 +38,10 @@
       object-fit: contain;
       margin: 10px auto;
       transition: transform 0.2s;
+      display: none; /* Initially hidden */
     }
-    .dice-image:hover {
-      transform: rotate(20deg);
+    .dice-image.show {
+      display: block; /* Show when class is added */
     }
     button {
       margin: 10px 0;
@@ -66,13 +67,16 @@
     h1 {
       margin-top: 10px;
     }
+    .actions {
+      grid-column: span 2;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <!-- Player 1 Section -->
     <div class="player">
-      <button id="roll" class="mb-5">Roll</button>
       <img id="image" src="" alt="Player 1 Dice" class="dice-image">
       <button id="number" class="mb-2">DISPLAYED NUMBER</button>
       <h1 class="font-bold">Player 1</h1>
@@ -85,9 +89,10 @@
       <h1 class="font-bold">Player 2</h1>
     </div>
 
-    <!-- Result Section -->
-    <div class="result">
-      <h1 id="disp" class="text-2xl font-bold my-5"></h1>  
+    <!-- Actions Section -->
+    <div class="actions">
+      <button id="roll" class="mb-5">Roll</button>
+      <h1 id="disp" class="text-2xl font-bold my-5"></h1>
       <button id="reset">Reset</button>
     </div>
   </div>
