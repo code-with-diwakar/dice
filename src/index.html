@@ -4,34 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('./image/background.jpg');
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+    .player, .result {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .dice-image {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin: 10px auto;
+    }
+    button {
+      margin: 10px 0;
+    }
+  </style>
 </head>
-<body  background="./image/background.jpg" class="grid grid-cols-7">
-  <!-- Button -->
-  <div class="mx-10">
-  <button id="roll" class="text-white px-10 font-semibold py-2 rounded-md  bg-yellow-400  flex justify-center border-solid border-2 border-sky-500" >Roll</button>
- <div class="px-5 py-5">
-  <!-- Image -->
-  <img id="image" src="" alt="">
-  <!-- Displayed Number -->
-  <button id="number" class="text-white px-10 font-semibold py-2 rounded-md  bg-yellow-400 mt-10 flex justify-center border-solid border-2 border-red-700" >DISPLYED NUMBER</button>
-  <h1 class="font-bold">Player 1 </h1>
-</div>
-</div>
-<div class="font-bold text-fuchsia-500" >
-  
+<body>
+  <div class="container">
+    <!-- Player 1 Section -->
+    <div class="player">
+      <button id="roll" class="text-white px-10 font-semibold py-2 rounded-md bg-yellow-400 border-solid border-2 border-sky-500 mb-5">Roll</button>
+      <img id="image" src="" alt="Player 1 Dice" class="dice-image">
+      <button id="number" class="font-semibold py-2 rounded-md bg-yellow-400 border-solid border-2 border-red-700 mb-2">DISPLAYED NUMBER</button>
+      <h1 class="font-bold">Player 1</h1>
+    </div>
 
-  
- <div>
-  <!-- Image -->
-  <img id="image1" src="" alt="">
-  <!-- Displayed Number -->
-  <button id="number1" class="text-white px-10 font-semibold py-2 rounded-md  bg-yellow-400 mt-10  justify-center border-solid border-2 border-red-700   grid grid-flow-row" >DISPLYED NUMBER</button>
-  <h1 class="font-bold">Player 2 </h1>
-</div>
-</div>
-<h1 id="disp" class=""></h1>  
+    <!-- Player 2 Section -->
+    <div class="player">
+      <img id="image1" src="" alt="Player 2 Dice" class="dice-image">
+      <button id="number1" class="text-white px-10 font-semibold py-2 rounded-md bg-yellow-400 border-solid border-2 border-red-700 mb-2">DISPLAYED NUMBER</button>
+      <h1 class="font-bold">Player 2</h1>
+    </div>
 
-<button id="roll1" class="text-white px-5 font-semibold py-2 rounded-md  bg-yellow-400   mt-10 mx-5 justify-center border-solid border-2 border-sky-500 mb-72" >who wins</button>
-<script src="dice.js"></script>
+    <!-- Result Section -->
+    <div class="result">
+      <h1 id="disp" class="text-2xl font-bold my-5"></h1>  
+      <button id="reset" class="text-white px-5 font-semibold py-2 rounded-md bg-yellow-400 border-solid border-2 border-sky-500">Reset</button>
+    </div>
+  </div>
+
+  <script src="dice.js"></script>
 </body>
 </html>
